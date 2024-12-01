@@ -14,7 +14,8 @@ function App() {
 
     const handleCierreModal = () => {
 		setAbrirModal(!abrirModal);
-		setAbrirModal2(false);
+        console.log("AbrirModal2",abrirModal2);
+        if(abrirModal2) setAbrirModal2(false);
 	};
     const handleCierreModal2 = () => setAbrirModal2(!abrirModal2);
     const handleCierreModal3 = () => setAbrirModal3(!abrirModal3);
