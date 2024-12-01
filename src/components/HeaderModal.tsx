@@ -1,8 +1,8 @@
 import { FC, useContext } from 'react';
-import { Box, DialogTitle, Icon, IconButton, Typography } from '@mui/material';
+import { Box, DialogTitle, IconButton, Typography } from '@mui/material';
 import {Close, Error} from '@mui/icons-material';
-import { ContextModal } from './Modal';
 import { ColoresAlerta, HeaderModalProps, TipoAlerta } from '../interfaces';
+import { ContextModal } from '../context/ModalContext';
 
 export const HeaderModal:FC<HeaderModalProps> = ({imagen, titulo, tipoAlerta, headerAlerta = false}) => {
 

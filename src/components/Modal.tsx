@@ -1,26 +1,9 @@
 import { Dialog } from "@mui/material"
-import { createContext, useState, useEffect, useRef } from "react";
-import { ActionsModalProps, HeaderModalProps } from "../interfaces";
+import { useState, useEffect, useRef } from "react";
+import { ModalProps } from "src/interfaces";
+import { ModalProvider } from "./ModalProvider";
 
-export interface ModalPropiedades {
-    open: boolean;
-    headerProps?: HeaderModalProps;
-    actionsProps?: ActionsModalProps;
-    children?: React.ReactNode | React.ReactNode[];
-    maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false;
-    fullWidth?: boolean;    
-    handleCierre?: () => void;
-}
-
-export interface ModalContextProps {
-    modal: ModalPropiedades;
-    handleCierre?: () => void
-}
-
-export const ContextModal = createContext({} as ModalContextProps);
-const { Provider } = ContextModal;
-
-export const Modal = ({ open, headerProps, actionsProps, children, handleCierre, maxWidth = 'xs', fullWidth = false } : ModalPropiedades) => {
+export const Modal = ({ open, headerProps, actionsProps, children, handleCierre, maxWidth = 'xs', fullWidth = false } : ModalProps) => {
     const [isOpen, setIsOpen] = useState(open);
     const componenteCargado = useRef(false);
     
@@ -37,13 +20,13 @@ export const Modal = ({ open, headerProps, actionsProps, children, handleCierre,
             componenteCargado.current = true;
             return;
         }
-        setIsOpen(open);
+        setIsOpen(open);        
     }, []);
 
     const handleInternalClose = () => handleCierre ? handleCierre() : setIsOpen(!isOpen);
 
     return (
-        <Provider
+        <ModalProvider
             value={{
                 modal: { open: isOpen, headerProps, actionsProps },
                 handleCierre: handleInternalClose
@@ -52,6 +35,6 @@ export const Modal = ({ open, headerProps, actionsProps, children, handleCierre,
             <Dialog open={ isOpen } onClose={ handleInternalClose } maxWidth={maxWidth} fullWidth={ fullWidth }>                              
                 { children }          
             </Dialog>
-        </Provider>
+        </ModalProvider>
     )
 }

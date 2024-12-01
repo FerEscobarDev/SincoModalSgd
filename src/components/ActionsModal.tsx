@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import { DialogActions, Button } from '@mui/material';
-import { ContextModal } from './Modal';
 import { ActionsModalProps } from '../interfaces';
+import { ContextModal } from '../context/ModalContext';
 
 export const ActionsModal : FC<ActionsModalProps> = ({ nombreBoton, sxActionButton, colorButton, sxActionsContainer, isLoading, handleAccion }) => {
 

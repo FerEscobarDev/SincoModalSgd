@@ -1,3 +1,4 @@
 export * from './ActionsModalProps';
-export * from './HeaderModalprops';
+export * from './HeaderModalProps';
 export * from './FormModalDinamicProps';
+export * from './ModalProps';

@@ -2,10 +2,10 @@ import { Box, DialogContent, MenuItem } from "@mui/material"
 import { Formik, Form  } from "formik"
 import * as Yup from 'yup'
 import { useContext } from "react"
-import { ContextModal } from "./Modal"
 import { Checkboxform, SelectForm, TextFieldForm } from "./InputsForm"
 import { ActionsModal } from "./ActionsModal"
 import { FormField, FormModalDinamicProps } from "../interfaces"
+import { ContextModal } from "../context/ModalContext"
 
 export const FormModalDinamic = (FormDinamicoProps : FormModalDinamicProps) => {
 
