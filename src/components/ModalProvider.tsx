@@ -1,6 +1,6 @@
 import { ContextModal } from "../context/ModalContext";
 import { FC } from "react";
-import { ModalContextProps } from "src/interfaces";
+import { ModalContextProps } from "../interfaces";
 
 interface ModalProviderProps {
     children: React.ReactNode;

@@ -1,7 +1,7 @@
 import { Dialog } from "@mui/material"
 import { useState, useEffect, useRef } from "react";
-import { ModalProps } from "src/interfaces";
 import { ModalProvider } from "./ModalProvider";
+import { ModalProps } from "../interfaces";
 
 export const Modal = ({ open, headerProps, actionsProps, children, handleCierre, maxWidth = 'xs', fullWidth = false } : ModalProps) => {
     const [isOpen, setIsOpen] = useState(open);
