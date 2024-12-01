@@ -89,7 +89,7 @@ function App() {
                 open={abrirModal2} 
                 headerProps={{
                     titulo:'Formulario',
-                    imagen:'https://iconos8.es/icon/VJz2Ob51dvZJ/website'
+                    imagen:'https://www.w3schools.com/howto/img_avatar.png',
                 }}
                 actionsProps={{
                     nombreBoton:'Aceptar',
